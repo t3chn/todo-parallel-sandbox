@@ -1,0 +1,15 @@
+name: prek
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  prek:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Run prek
+        run: uvx prek run --all-files
